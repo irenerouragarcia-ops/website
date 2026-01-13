@@ -17,6 +17,17 @@
     /* Slightly more opaque for content focus */
     --glass-border: rgba(255, 255, 255, 0.9);
     --shadow-soft: 0 10px 40px rgba(10, 75, 72, 0.05);
+
+    /* Sacred Geometry / Golden Ratio Spacing */
+    --phi-1: 1.618rem;
+    --phi-2: 2.618rem;
+    /* ~42px */
+    --phi-3: 4.236rem;
+    /* ~68px */
+    --phi-4: 6.854rem;
+    /* ~110px */
+    --phi-5: 11.090rem;
+    /* ~177px */
 }
 
 * {
@@ -44,6 +55,10 @@ body {
     background-repeat: no-repeat;
 }
 
+.hero-bg-container {
+    display: none;
+}
+
 .bg-pos-left {
     background-position: left center;
 }
@@ -68,7 +83,7 @@ h1,
 h2,
 h3 {
     font-family: var(--font-heading);
-    font-weight: 700;
+    font-weight: 500;
 }
 
 a {
@@ -82,19 +97,18 @@ a {
     position: fixed;
     top: 0;
     width: 100%;
-    padding: 1.5rem 3rem;
+    top: 0;
+    width: 100%;
+    padding: 0.8rem 3rem;
+    display: flex;
     display: flex;
     justify-content: space-between;
     align-items: center;
     z-index: 1000;
-    background: rgba(253, 252, 248, 0.95);
-    backdrop-filter: blur(10px);
-    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.03);
-
-    /* Soft Gradient Edge at Bottom */
-    /* Soft Gradient Edge at Bottom - REMOVED for firmer edge */
-    /* -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 100%); */
-    /* mask-image: linear-gradient(to bottom, black 70%, transparent 100%); */
+    z-index: 2000;
+    /* Increased to ensure it stays above all content */
+    background: #fdfcf8;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 .logo {
@@ -197,21 +211,26 @@ footer {
     /* Vertically center */
     text-align: center;
     position: relative;
-    overflow: hidden;
+    overflow: visible;
     padding-top: 0;
 }
 
 .hero-content {
     position: relative;
-    z-index: 2;
+    z-index: 10;
+    /* Lower than navbar */
     /* max-width removed to allow natural centering of wider children if needed, but quote is constrained */
     width: 100%;
-    padding: 2rem;
-    animation: fadeIn 1.5s ease;
+    padding: 6rem 2rem 2rem;
+    /* Increased top padding significantly */
+    /* animation: fadeIn 1.5s ease; Removed to prevent glitching/disappearing */
     margin: 0 auto;
     text-align: center;
-    /* Move content higher up */
-    transform: translateY(-10%);
+    /* Ensure visibility is forced */
+    opacity: 1 !important;
+    visibility: visible !important;
+    /* Reset transform to ensure it's not off-screen */
+    transform: none;
 }
 
 
@@ -220,8 +239,13 @@ footer {
     /* Reverted to serif heading font */
     font-size: 3.5rem;
     line-height: 1.1;
+    line-height: 1.1;
     margin-bottom: 2.5rem;
+    /* Already reasonable, but perhaps padding around the container helps? */
+    padding: 0 1rem;
+    /* Buffer on sides */
     color: var(--color-text-primary);
+    font-weight: 500;
 }
 
 .hero-subtitle {
@@ -234,8 +258,8 @@ footer {
     /* Removed white-space: nowrap to allow wrapping if needed on small screens, and rely on center align */
 
     /* Background Strip */
-    background-color: rgba(255, 255, 255, 0.6);
-    backdrop-filter: blur(2px);
+    /* Background Strip */
+    background-color: rgba(255, 255, 255, 0.9);
     padding: 0.5rem 1rem;
     border-radius: 12px;
     display: inline-block;
@@ -386,27 +410,15 @@ footer {
 
 
 /* Content Glass */
+/* Content Glass (Renamed concept to Clean Card) */
 .content-glass {
-    background: rgba(255, 255, 255, 0.85);
-    /* Slightly transparent white */
-    backdrop-filter: blur(15px);
-    /* Strong blur for softness */
-    -webkit-backdrop-filter: blur(15px);
-    border-radius: 30px;
-    /* Very soft corners */
-    padding: 3.5rem;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.03);
-    /* Soft, airy shadow */
-    border: 1px solid rgba(255, 255, 255, 0.6);
-    /* Subtle border */
+    background: #fff;
+    border-radius: 20px;
+    padding: var(--phi-4) var(--phi-3);
+    /* Sacred padding */
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.03);
 
-    /* Gradient Transparency Edges */
-    -webkit-mask-image: linear-gradient(to right, transparent, black 40px, black calc(100% - 40px), transparent),
-        linear-gradient(to bottom, transparent, black 40px, black calc(100% - 40px), transparent);
-    -webkit-mask-composite: source-in;
-    mask-image: linear-gradient(to right, transparent, black 40px, black calc(100% - 40px), transparent),
-        linear-gradient(to bottom, transparent, black 40px, black calc(100% - 40px), transparent);
-    mask-composite: intersect;
     max-width: 800px;
     margin: 0 auto;
     width: 100%;
@@ -428,8 +440,14 @@ footer {
 .text-content h3 {
     color: var(--color-accent);
     margin-bottom: 0.5rem;
-    margin-top: 2rem;
+    margin-top: 3rem;
+    /* Further increased space between H1 and content */
     font-size: 1.4rem;
+}
+
+.content-glass h1 {
+    margin-bottom: 3rem;
+    /* Explicitly space H1 from Intro Text */
 }
 
 .about-portrait {
@@ -461,9 +479,15 @@ footer {
 /* Resource Grid */
 .resource-grid-large {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
     margin-top: 2rem;
+}
+
+@media (max-width: 900px) {
+    .resource-grid-large {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
 }
 
 .resource-card {
@@ -479,12 +503,55 @@ footer {
     height: 100%;
 }
 
-.resource-card img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    border-radius: 10px;
-    margin-bottom: 1rem;
+/* Removed .resource-card img generic rule to prevent conflict with icon */
+/* .resource-card img { ... } */
+
+/* .resource-card img { ... } */
+
+.card-icon-frame {
+    display: block;
+    width: 100px;
+    /* Slight increase for better visibility of crops */
+    height: 100px;
+    margin: 0 auto 1.5rem;
+    border-radius: 50%;
+    /* Optional: Can be square or rounded */
+    background-image: url('resource_icon.png');
+    background-repeat: no-repeat;
+    /* transition: background-position 0.5s ease, background-size 0.5s ease; */
+}
+
+/* Card 1: FND Links - Focus on Leaves (Top Center) */
+.resource-card:nth-child(1) .card-icon-frame {
+    background-size: 180%;
+    background-position: 50% 10%;
+}
+
+/* Card 2: Grounding - Focus on Waves (Bottom Left) */
+.resource-card:nth-child(2) .card-icon-frame {
+    background-size: 240%;
+    /* Zooms in more on waves */
+    background-position: 10% 90%;
+}
+
+/* Card 3: Care Group - Focus on Spiral/Droplet (Top Right - pure droplet) */
+.resource-card:nth-child(3) .card-icon-frame {
+    background-size: 220%;
+    /* Focus heavily on the spiral/droplet top part */
+    background-position: 90% 20%;
+}
+
+/* Clickable Card Styles */
+a.resource-card {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    cursor: pointer;
+}
+
+a.resource-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
 
 .resource-card h3 {
@@ -560,7 +627,6 @@ footer {
     width: 100%;
     height: 100%;
     background: rgba(10, 75, 72, 0.4);
-    backdrop-filter: blur(5px);
     z-index: 2000;
     display: flex;
     justify-content: center;
@@ -755,6 +821,138 @@ footer {
     color: var(--color-text-secondary);
 }
 
+/* --- Session Interaction Styles --- */
+/* Default (Mobile): Stacked Vertical with reduced spacing */
+.session-text-group {
+    margin-bottom: 0.5rem;
+    /* Reduced from 2rem */
+    transition: margin-bottom 0.4s ease;
+}
+
+.session-text-group.fixed-active,
+.session-text-group:hover {
+    margin-bottom: 2rem;
+    /* Expand margin when active to give breathing room */
+}
+
+.session-titles-row {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.session-reveal-text {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, opacity 0.5s ease, margin-top 0.4s ease;
+}
+
+.session-text-group:hover .session-reveal-text,
+.session-text-group.fixed-active .session-reveal-text {
+    max-height: 500px;
+    opacity: 1;
+    margin-top: 1rem;
+}
+
+/* Large Screens (> 900px): Horizontal Titles + Shared Text Area */
+@media (min-width: 900px) {
+    .session-titles-row {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        /* 3 Titles in Row 1 */
+        grid-template-rows: auto auto;
+        /* Row 1: Titles, Row 2: Text Area */
+        /* Row 1: Titles, Row 2: Text Area */
+        gap: var(--phi-2);
+        /* Reduced from phi-3 (~4.2rem) to phi-2 (~2.6rem) for tighter titles */
+        margin-bottom: 3rem;
+        /* Equalized spacing to match intro */
+        /* Reduced significanty. Text will push content down when revealed. */
+        /* Reserve space for text area */
+        position: relative;
+    }
+
+    .session-text-group {
+        display: contents;
+        /* Flatten group to let children participate in grid */
+        margin-bottom: 0;
+        /* Handled by grid gap/reserved space */
+    }
+
+    .session-text-trigger {
+        grid-row: 1;
+        text-align: center;
+        margin-bottom: 2rem;
+        font-size: 1.5rem;
+        white-space: nowrap;
+        /* Keep titles on one line */
+    }
+
+    .session-text-group:nth-child(1) .session-text-trigger {
+        grid-column: 1;
+    }
+
+    .session-text-group:nth-child(2) .session-text-trigger {
+        grid-column: 2;
+    }
+
+    .session-text-group:nth-child(3) .session-text-trigger {
+        grid-column: 3;
+    }
+
+    .session-reveal-text {
+        grid-row: 2;
+        grid-column: 1 / -1;
+        /* Span full width */
+        margin-top: 0;
+        text-align: center;
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+
+        /* Absolute positioning within the grid cell to overlap cleanly? */
+        /* Actually, in generic grid, row 2 will expand to fit content. 
+           If we want them to overlap (occupy same space), we need them all in row 2 
+           and use z-index/opacity. */
+        grid-area: 2 / 1 / 3 / 4;
+        /* Explicitly place in Row 2, Col 1-4 */
+        pointer-events: none;
+        /* Prevent interaction when hidden */
+    }
+
+    .session-text-group:hover .session-reveal-text,
+    .session-text-group.fixed-active .session-reveal-text {
+        opacity: 1;
+        pointer-events: auto;
+        /* No max-height transition here, we just want opacity fade in fixed space? 
+           If row 2 collapses when empty, page jumps. 
+           We might want a min-height for Row 2. */
+    }
+}
+
+/* Small Card Icons (reuse base .card-icon-frame) */
+.card-icon-frame.small-icon {
+    width: 60px;
+    height: 60px;
+    margin: 0;
+    /* Reset margin from base class */
+}
+
+/* 1:1 Session Card - Leaf Focus */
+.session-option-card:nth-child(1) .card-icon-frame.small-icon {
+    background-size: 200%;
+    background-position: 50% 15%;
+}
+
+/* Group Session Card - Spiral/Droplet Focus */
+.session-option-card:nth-child(2) .card-icon-frame.small-icon {
+    background-size: 210%;
+    background-position: 85% 35%;
+}
+
+
+
 .item-price {
     font-weight: 700;
     color: var(--color-accent);
@@ -828,6 +1026,7 @@ footer {
     width: 18px;
 }
 
+
 .lang-tag {
     font-size: 0.7rem;
     text-transform: uppercase;
@@ -835,4 +1034,216 @@ footer {
     color: #fff;
     padding: 2px 6px;
     border-radius: 4px;
+}
+
+/* --- Mobile Menu & Responsiveness --- */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 6px;
+    z-index: 1001;
+}
+
+.bar {
+    width: 25px;
+    height: 2px;
+    background-color: var(--color-text-primary);
+    transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+    }
+
+    .nav-links {
+        display: flex;
+        position: fixed;
+        top: 108px;
+        right: -100%;
+        width: 100%;
+        height: calc(100vh - 108px);
+        background: #fff;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding-top: 3rem;
+        gap: 2.5rem;
+        transition: right 0.4s ease;
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.05);
+        z-index: 999;
+    }
+
+    .nav-links.active {
+        right: 0;
+    }
+
+    .nav-links a {
+        font-size: 1.3rem;
+        font-weight: 600;
+    }
+
+    /* Hamburger Animation to X (2 bars) */
+    .menu-toggle.active .bar:nth-child(1) {
+        transform: translateY(4px) rotate(45deg);
+    }
+
+    .menu-toggle.active .bar:nth-child(2) {
+        transform: translateY(-4px) rotate(-45deg);
+    }
+
+    /* Adjust padding for mobile boxes */
+    .content-glass {
+        padding: 3rem 1.5rem;
+    }
+
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .hero-content {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+}
+
+/* --- Testimonial Slider --- */
+.testimonial-slider-container {
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 1.5rem 2rem;
+    margin: 0 auto 3rem;
+    /* Spacing below subtitle and above quote */
+    max-width: 650px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
+    position: relative;
+    /* Ensure it doesn't overlap weirdly */
+}
+
+.testimonial-header {
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 0.15em;
+    color: var(--color-accent);
+    margin-bottom: 1rem;
+    font-weight: 700;
+    opacity: 0.9;
+}
+
+.testimonial-slider {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    position: relative;
+}
+
+.testimonial-track-container {
+    flex: 1;
+    overflow: hidden;
+    min-height: 80px;
+    /* Reserve space */
+    display: flex;
+    align-items: center;
+}
+
+.testimonial-track {
+    width: 100%;
+    position: relative;
+}
+
+.testimonial-slide {
+    display: none;
+    text-align: center;
+    font-style: italic;
+    color: var(--color-text-primary);
+    font-size: 1rem;
+    line-height: 1.6;
+    animation: fadeInSlide 0.5s ease;
+}
+
+.testimonial-slide.active {
+    display: block;
+}
+
+@keyframes fadeInSlide {
+    from {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.slider-arrow {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    color: var(--color-text-secondary);
+    cursor: pointer;
+    padding: 0.5rem;
+    transition: color 0.3s, transform 0.2s;
+    opacity: 0.5;
+    z-index: 10;
+}
+
+.session-text-trigger:hover,
+.session-text-group.fixed-active .session-text-trigger {
+    color: var(--color-text-primary);
+    transform: scale(1.05);
+    /* Make it bigger */
+    font-weight: 700;
+    /* Make it bolder */
+    /* text-shadow: 0 2px 4px rgba(0,0,0,0.1); Optional if needed */
+}
+
+.session-intro {
+    max-width: 800px;
+    margin: 0 auto 3rem;
+    /* Equalized spacing */
+    /* Sacred margin */
+    text-align: center;
+    text-align: center;
+    font-size: 1.1rem;
+    color: var(--color-text-secondary);
+    line-height: 1.8;
+}
+
+.slider-arrow:hover {
+    color: var(--color-accent);
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+    .testimonial-slide {
+        font-size: 0.9rem;
+    }
+
+    .testimonial-slider-container {
+        padding: 1.2rem;
+        width: 95%;
+    }
+}
+
+/* Testimonial Transitions */
+.testimonial-slide.exiting {
+    animation: fadeOutSlide 1s ease forwards;
+}
+
+@keyframes fadeOutSlide {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
 }

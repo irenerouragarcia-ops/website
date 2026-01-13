@@ -37,33 +37,48 @@
         <section class="organic-section center-align">
 
             <div class="content-glass wide">
-                <div class="icon-header"><i data-lucide="sparkles"></i></div>
+
                 <h1 data-i18n="sessions.title">Sessions</h1>
+                <p data-i18n="sessions.intro" class="session-intro">Loading...</p>
 
-                <div class="text-content">
-                    <h3 data-i18n="sessions.offer1_title">Wellbeing Coaching</h3>
-                    <p data-i18n="sessions.offer1_text">Personalised sessions designed to support you in creating a more
-                        comfortable, healthy, and fulfilling life. We will work together to identify your needs and
-                        develop practical, achievable steps to support your overall wellbeing.</p>
+                <div class="text-content session-titles-row">
+                    <div class="session-text-group">
+                        <h3 data-i18n="sessions.offer1_title" class="session-text-trigger">Wellbeing Coaching</h3>
+                        <div class="session-reveal-text">
+                            <p data-i18n="sessions.offer1_text">Personalised sessions designed to support your wellbeing
+                                and management of symptoms, using practical, sustainable tools from mindfulness, CBT,
+                                and polyvagal-informed approaches to help you build safety, balance, and inner resources
+                                in everyday life.</p>
+                        </div>
+                    </div>
 
-                    <h3 data-i18n="sessions.offer2_title">Hypnotherapy</h3>
-                    <p data-i18n="sessions.offer2_text">Subconscious-focused work to help reframe limiting beliefs and
-                        unhelpful patterns. Hypnotherapy can be particularly effective for anxiety, stress, and
-                        long-standing conditions.</p>
+                    <div class="session-text-group">
+                        <h3 data-i18n="sessions.offer2_title" class="session-text-trigger">Hypnotherapy</h3>
+                        <div class="session-reveal-text">
+                            <p data-i18n="sessions.offer2_text">Subconscious-focused (similar to relaxation-based) work
+                                to reframe unhelpful patterns and support long-standing conditions and associated
+                                symptoms such as anxiety and low mood. Sessions use personalised scripts tailored to
+                                what helps you feel calm, safe, and supported.</p>
+                        </div>
+                    </div>
 
-                    <h3 data-i18n="sessions.offer3_title">FND Support</h3>
-                    <p data-i18n="sessions.offer3_text">Specialist guidance for people living with Functional
-                        Neurological Disorder. Support focused on understanding your symptoms, building confidence, and
-                        reclaiming a sense of control in your life.</p>
+                    <div class="session-text-group">
+                        <h3 data-i18n="sessions.offer3_title" class="session-text-trigger">FND Support</h3>
+                        <div class="session-reveal-text">
+                            <p data-i18n="sessions.offer3_text">Specialist guidance for people living with Functional
+                                Neurological Disorder. Support focused on understanding your symptoms, building
+                                confidence, and
+                                reclaiming a sense of control in your life.</p>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- New Session Options Grid -->
                 <div class="session-options-grid">
-                    <!-- 1:1 Sessions -->
                     <div class="session-option-card">
                         <div class="option-header" onclick="toggleSessionOption(this)">
                             <div class="header-content">
-                                <i data-lucide="user"></i>
+                                <div class="card-icon-frame small-icon"></div>
                                 <h3 data-i18n="sessions.opt1_title">1:1 Sessions</h3>
                             </div>
                             <i data-lucide="chevron-down" class="toggle-icon"></i>
@@ -104,11 +119,10 @@
                         </div>
                     </div>
 
-                    <!-- Group Sessions / Programs -->
                     <div class="session-option-card">
                         <div class="option-header" onclick="toggleSessionOption(this)">
                             <div class="header-content">
-                                <i data-lucide="users"></i>
+                                <div class="card-icon-frame small-icon"></div>
                                 <h3 data-i18n="sessions.opt2_title">Group sessions / Programs</h3>
                             </div>
                             <i data-lucide="chevron-down" class="toggle-icon"></i>

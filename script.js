@@ -15,10 +15,11 @@ const translations = {
         },
         sessions: {
             title: "Sessions",
-            offer1_title: "Wellbeing Coach",
-            offer1_text: "Personalised sessions designed to support you in creating a more comfortable, healthy, and fulfilling life. We will work together to identify your needs and define practical, realistic, and sustainable steps that support your overall wellbeing. Throughout the process, I will share tools and techniques from different therapies and approaches, such as mindfulness, Cognitive Behavioural Therapy (CBT), and polyvagal theory, which you can easily integrate into your daily life to strengthen your internal resources and cultivate a greater sense of safety, balance, and wellbeing.",
+            intro: "I am happy to offer support in a range of formats, including one-to-one sessions, regular group meetings, and educational programs. See below for information on how I structure some of my packs that have worked well for other clients. If you would like to discuss what might work best for you, please book a discovery call with me.",
+            offer1_title: "Wellbeing Coaching",
+            offer1_text: "Personalised sessions designed to support your wellbeing and management of symptoms, using practical, sustainable tools from mindfulness, CBT, and polyvagal-informed approaches to help you build safety, balance, and inner resources in everyday life.",
             offer2_title: "Hypnotherapy",
-            offer2_text: "Subconscious-focused work to help reframe limiting beliefs and unhelpful patterns. Hypnotherapy can be particularly effective for long-standing conditions and associated symptoms such as anxiety and depression. The scripts used during our sessions are very personalised and tailored to what brings you a sense of peace, calm, and safety. Before each session, I will invite you to complete a short form to identify what helps you feel calm, held and soothed and to clarify your specific goals and affirmations.",
+            offer2_text: "Subconscious-focused (similar to relaxation-based) work to reframe unhelpful patterns and support long-standing conditions and associated symptoms such as anxiety and low mood. Sessions use personalised scripts tailored to what helps you feel calm, safe, and supported.",
             offer3_title: "FND Support",
             offer3_text: "Specialist guidance for people living with Functional Neurological Disorder. Support focused on understanding and managing your symptoms, building confidence, improving well-being and reclaiming a sense of control in your life.",
             btn: "Book Discovery Call",
@@ -73,10 +74,11 @@ const translations = {
         },
         sessions: {
             title: "Sesiones",
-            offer1_title: "Coach de Bienestar",
-            offer1_text: "Sesiones personalizadas diseñadas para acompañarte en la creación de una vida más cómoda, saludable y plena. Trabajaremos junt@s para identificar tus necesidades y definir pasos prácticos, realistas y sostenibles que favorezcan tu bienestar integral. A lo largo del proceso, compartiré contigo herramientas y técnicas de distintas terapias y enfoques, como el mindfulness, la Terapia Cognitivo-Conductual (TCC) y la teoría polivagal, que podrás integrar fácilmente en tu día a día para fortalecer tus recursos internos y cultivar una mayor sensación de seguridad, equilibrio y bienestar en tu vida cotidiana.",
+            intro: "Me alegra ofrecer apoyo en diversos formatos, incluyendo sesiones individuales, reuniones grupales y programas educativos. A continuación encontrarás información sobre cómo estructuro algunos de mis paquetes que han funcionado bien para otros clientes. Si te gustaría comentar qué opción podría ser la mejor para ti, no dudes en reservar una llamada de descubrimiento conmigo.",
+            offer1_title: "Coaching de Bienestar",
+            offer1_text: "Sesiones personalizadas diseñadas para apoyar tu bienestar y el manejo de tus síntomas, utilizando herramientas prácticas y sostenibles basadas en mindfulness, TCC y enfoques informados en la teoría polivagal para ayudarte a construir seguridad, equilibrio y recursos internos en tu vida diaria.",
             offer2_title: "Hipnoterapia",
-            offer2_text: "Trabajo a nivel subconsciente para ayudar a reformular creencias limitantes y patrones poco útiles. La hipnoterapia puede ser especialmente eficaz para la ansiedad, el estrés y condiciones de larga duración.",
+            offer2_text: "Trabajo enfocado en el subconsciente (similar a la relajación) para reencuadrar patrones poco útiles y apoyar condiciones de larga duración y síntomas asociados como ansiedad y bajo estado de ánimo. Las sesiones utilizan guiones personalizados adaptados a lo que te ayuda a sentir calma, seguridad y apoyo.",
             offer3_title: "Apoyo TNF",
             offer3_text: "Acompañamiento especializado para personas que viven con Trastorno Neurológico Funcional. Un apoyo centrado en comprender tus síntomas, fortalecer la confianza y recuperar una sensación de control sobre tu vida. (Sesiones de grupo e individuales)",
             btn: "Reservar Llamada",
@@ -125,6 +127,206 @@ const shopItems = [
     { id: 3, title_en: "Mindzing Notebook", title_es: "Cuaderno Mindzing", icon: "book" },
 ];
 
+const testimonials = [
+    {
+        en: "All correspondence was quickly replied to with thoughtful personalised answers to my conditions and situations, even financial.",
+        es: "Toda la correspondencia fue respondida rápidamente con respuestas personalizadas y consideradas a mis condiciones y situaciones, incluso las financieras."
+    },
+    {
+        en: "I loved the programme. I had been on my own for a long time with everything that FND involves, and being able to share and listen to other people with the same condition helped me understand it better.",
+        es: "Me encantó el programa. Llevaba mucho tiempo sola con todo lo que implica el TNF, y poder compartir y escuchar a otras personas con la misma condición me ayudó a entenderlo mejor."
+    },
+    {
+        en: "Irene is knowledgeable, supportive and kind. Feeling understood, believed and heard was a big help to me.",
+        es: "Irene tiene mucho conocimiento, es solidaria y amable. Sentirme comprendida, creída y escuchada fue una gran ayuda para mí."
+    },
+    {
+        en: "My experience in the programme was much better than I expected.",
+        es: "Mi experiencia en el programa fue mucho mejor de lo que esperaba."
+    },
+    {
+        en: "The individual sessions supported me in every way: I felt understood and always received practical tools that helped me.",
+        es: "Las sesiones individuales me apoyaron en todos los sentidos: me sentí comprendida y siempre recibí herramientas prácticas que me ayudaron."
+    },
+    {
+        en: "It helped me to take care of myself, to feel valued, to learn breathing techniques I didn’t know before, and above all to realise that I’m not always the only one in pain or feeling unwell.",
+        es: "Me ayudó a cuidarme, a sentirme valorada, a aprender técnicas de respiración que no conocía, y sobre todo a darme cuenta de que no siempre soy la única que siente dolor o malestar."
+    },
+    {
+        en: "Thank you, Irene.",
+        es: "Gracias, Irene."
+    },
+    {
+        en: "The weekly group sessions make Wednesdays feel very special, and we have created a wonderful community.",
+        es: "Las sesiones semanales en grupo hacen que los miércoles se sientan muy especiales, y hemos creado una comunidad maravillosa."
+    },
+    {
+        en: "I am very grateful to my fellow participants and, above all, to Irene for making the journey much easier.",
+        es: "Estoy muy agradecida a mis compañeras participantes y, sobre todo, a Irene por hacer el camino mucho más fácil."
+    },
+    {
+        en: "This programme has been incredibly useful for me.",
+        es: "Este programa ha sido increíblemente útil para mí."
+    },
+    {
+        en: "Irene’s gentle and comforting nature, together with her great experience, means you are in very good hands.",
+        es: "La naturaleza suave y reconfortante de Irene, junto con su gran experiencia, significa que estás en muy buenas manos."
+    },
+    {
+        en: "Being with the other women and getting to know other cases helped me a lot, regardless of age.",
+        es: "Estar con las otras mujeres y conocer otros casos me ayudó mucho, independientemente de la edad."
+    },
+    {
+        en: "The hypnotherapy audio I received was personal from suggestions I gave, it is amazing and I enjoy it regularly.",
+        es: "El audio de hipnoterapia que recibí fue personalizado a partir de sugerencias que di, es increíble y lo disfruto regularmente."
+    },
+    {
+        en: "My experience as part of the group was enormously positive and enriching.",
+        es: "Mi experiencia como parte del grupo fue enormemente positiva y enriquecedora."
+    },
+    {
+        en: "I highly recommend this programme, both for the support network that is created and for Irene’s knowledge and guidance.",
+        es: "Recomiendo encarecidamente este programa, tanto por la red de apoyo que se crea como por el conocimiento y la guía de Irene."
+    },
+    {
+        en: "I met people who I truly felt understood my experience, and we supported each other, encouraging one another and lifting morale when needed.",
+        es: "Conocí a personas que realmente sentí que entendían mi experiencia, y nos apoyamos mutuamente, animándonos y levantando la moral cuando era necesario."
+    },
+    {
+        en: "What Irene has created for people with FND is something truly special.",
+        es: "Lo que Irene ha creado para las personas con TNF es algo verdaderamente especial."
+    },
+    {
+        en: "Together we learned wonderful techniques, very useful, calming, and relaxing for the nervous system, which in my personal case have been very valuable in everyday life.",
+        es: "Juntas aprendimos técnicas maravillosas, muy útiles, calmantes y relajantes para el sistema nervioso, que en mi caso personal han sido muy valiosas en la vida diaria."
+    },
+    {
+        en: "I am grateful to Irene for her wonderful work as both a professional and a person, for guiding us with empathy and wisdom.",
+        es: "Estoy agradecida a Irene por su maravilloso trabajo tanto como profesional y como persona, por guiarnos con empatía y sabiduría."
+    },
+    {
+        en: "This programme didn’t just give me tools, but also a safe space where vulnerability became strength.",
+        es: "Este programa no solo me dio herramientas, sino también un espacio seguro donde la vulnerabilidad se convirtió en fortaleza."
+    },
+    {
+        en: "And to my peers for their courage in sharing their experiences.",
+        es: "Y a mis compañeras por su valentía al compartir sus experiencias."
+    },
+    {
+        en: "This programme is a lighthouse for those of us navigating through the fog of FND.",
+        es: "Este programa es un faro para aquellos de nosotros que navegamos a través de la niebla del TNF."
+    },
+    {
+        en: "The course has helped me get to know myself, learn how to care for myself, and above all to prioritise myself and listen to my body — something I never thought I would be capable of doing.",
+        es: "El curso me ha ayudado a conocerme a mí misma, aprender a cuidarme y sobre todo a priorizarme y escuchar a mi cuerpo, algo que nunca pensé que sería capaz de hacer."
+    },
+    {
+        en: "The practices we learned have made everyday life much more manageable, even on the most difficult days.",
+        es: "Las prácticas que aprendimos han hecho que la vida diaria sea mucho más manejable, incluso en los días más difíciles."
+    },
+    {
+        en: "I really look forward to seeing where she takes this work next and, if possible, being part of it again.",
+        es: "Tengo muchas ganas de ver a dónde lleva este trabajo y, si es posible, volver a formar parte de él."
+    },
+    {
+        en: "Having recently been diagnosed with FND and receiving no information from the specialist about what to expect or how to manage my symptoms, I was incredibly grateful to come across this course with Irene.",
+        es: "Habiendo sido diagnosticada recientemente con TNF y sin recibir información del especialista sobre qué esperar o cómo manejar mis síntomas, estuve increíblemente agradecida de encontrar este curso con Irene."
+    },
+    {
+        en: "I now have a much better understanding of how my thoughts, emotions, and behaviours are interconnected, and how I can work with them — whether that means changing them, accepting them, or learning to find joy in whatever kind of day I’m having.",
+        es: "Ahora tengo una mejor comprensión de cómo mis pensamientos, emociones y comportamientos están interconectados, y cómo puedo trabajar con ellos, ya sea cambiándolos, aceptándolos o aprendiendo a encontrar alegría en cualquier tipo de día que tenga."
+    },
+    {
+        en: "I’ve started to include meditation and regular check-ins in my daily routine, which has been very beneficial and has also helped with pacing.",
+        es: "He empezado a incluir la meditación y chequeos regulares en mi rutina diaria, lo cual ha sido muy beneficioso y también me ha ayudado con el ritmo."
+    },
+    {
+        en: "Taking part in this course has allowed me to become a better version of myself and to take back control of my life, my thoughts, and my happiness",
+        es: "Participar en este curso me ha permitido convertirme en una mejor versión de mí misma y recuperar el control de mi vida, mis pensamientos y mi felicidad."
+    }
+];
+
+let sliderInterval;
+let currentSlide = 0;
+
+function initTestimonialSlider() {
+    const track = document.querySelector('.testimonial-track');
+    if (!track) return;
+
+    // Render slides
+    renderSlides();
+
+    // Event Listeners for arrows
+    const prevBtn = document.querySelector('.slider-arrow.prev');
+    const nextBtn = document.querySelector('.slider-arrow.next');
+
+    if (prevBtn) {
+        prevBtn.addEventListener('click', () => {
+            resetSliderInterval();
+            moveSlide(-1);
+        });
+    }
+
+    if (nextBtn) {
+        nextBtn.addEventListener('click', () => {
+            resetSliderInterval();
+            moveSlide(1);
+        });
+    }
+
+    startSliderInterval();
+}
+
+function renderSlides() {
+    const track = document.querySelector('.testimonial-track');
+    if (!track) return;
+
+    // Clear existing
+    track.innerHTML = '';
+
+    testimonials.forEach((t, index) => {
+        const slide = document.createElement('div');
+        slide.className = 'testimonial-slide';
+        if (index === currentSlide) slide.classList.add('active');
+
+        const quoteText = currentLang === 'en' ? t.en : (t.es || t.en);
+
+        slide.innerHTML = `<p>"${quoteText}"</p>`;
+        track.appendChild(slide);
+    });
+}
+
+function moveSlide(direction) {
+    const slides = document.querySelectorAll('.testimonial-slide');
+    if (slides.length === 0) return;
+
+    const current = slides[currentSlide];
+
+    // Fade out
+    current.classList.add('exiting');
+
+    // Wait for fade out, then switch
+    setTimeout(() => {
+        current.classList.remove('active', 'exiting');
+
+        currentSlide = (currentSlide + direction + slides.length) % slides.length;
+
+        slides[currentSlide].classList.add('active');
+    }, 1000); // Wait 1s (match CSS animation)
+}
+
+function startSliderInterval() {
+    if (sliderInterval) clearInterval(sliderInterval);
+    sliderInterval = setInterval(() => {
+        moveSlide(1);
+    }, 10000);
+}
+
+function resetSliderInterval() {
+    clearInterval(sliderInterval);
+    startSliderInterval();
+}
+
 // --- 2. Translation & Persistence ---
 let currentLang = localStorage.getItem('siteLang') || 'en';
 
@@ -159,6 +361,9 @@ function updateLanguage(lang) {
     // Refresh Shop Grid Titles if present
     const shopGrid = document.getElementById('shop-grid');
     if (shopGrid) renderShopGrid();
+
+    // Refresh Testimonials
+    renderSlides();
 }
 
 // --- 3. Render Shop Grid ---
@@ -180,6 +385,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Initial Load
     updateLanguage(currentLang);
+    initTestimonialSlider();
 
     // Language Toggle
     document.querySelectorAll('.lang-btn').forEach(btn => {
@@ -227,6 +433,24 @@ document.addEventListener('DOMContentLoaded', () => {
             navbar.style.boxShadow = "none";
         }
     });
+    // --- 6. Mobile Menu Toggle ---
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    if (menuToggle && navLinks) {
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            menuToggle.classList.toggle('active');
+        });
+
+        // Close menu when a link is clicked
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                menuToggle.classList.remove('active');
+            });
+        });
+    }
 });
 
 // --- 5. Session Options Toggle ---
@@ -234,3 +458,34 @@ function toggleSessionOption(headerElement) {
     const card = headerElement.parentElement;
     card.classList.toggle('expanded');
 }
+
+// --- 6. Session Text Hover/Click Logic ---
+function initSessionTextToggles() {
+    const sections = document.querySelectorAll('.session-text-group');
+
+    sections.forEach(group => {
+        const trigger = group.querySelector('.session-text-trigger');
+        if (!trigger) return;
+
+        // Click to toggle "fixed" state
+        trigger.addEventListener('click', (e) => {
+            e.stopPropagation(); // Prevent bubbling if needed
+            // Close others? Optional. For now let's just toggle this one.
+            group.classList.toggle('fixed-active');
+        });
+    });
+
+    // Optional: Close on click outside? 
+    document.addEventListener('click', (e) => {
+        if (!e.target.closest('.session-text-group')) {
+            document.querySelectorAll('.session-text-group.fixed-active').forEach(el => {
+                el.classList.remove('fixed-active');
+            });
+        }
+    });
+}
+
+// Initialize
+document.addEventListener('DOMContentLoaded', () => {
+    initSessionTextToggles();
+});
